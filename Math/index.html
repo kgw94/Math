@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css?ver=0.1" media="all">
+    <title>Number Property Site</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+
+        function saveScreenshot() 
+        {
+            // Get the current screen as an image data URL
+            const canvas = document.createElement('canvas');
+            const body = document.querySelector('body');
+            const html = document.documentElement;
+            canvas.width = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
+            canvas.height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+            const ctx = canvas.getContext('2d');
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+          
+            const img = new Image();
+            img.onload = function() {
+              ctx.drawImage(img, window.scrollX, window.scrollY, window.innerWidth, window.innerHeight, 0, 0, canvas.width, canvas.height);
+              const dataUrl = canvas.toDataURL('image/png');
+          
+              // Create a link to download the image
+              const link = document.createElement('a');
+              link.download = 'screenshot.png';
+              link.href = dataUrl;
+          
+              // Click the link to prompt the user to save the image
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            };
+            
+            img.src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="' + canvas.width + '" height="' + canvas.height + '"></svg>');
+        }
+          
+        
+        $(document).ready(function(){
+            $("#screenshot-btn").on("click",function(e){
+                saveScreenshot();
+            });
+        });
+        
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="pageHeader">
+        <h1>Number Property Site</h1>
+      </div>
+      <div id="form">
+        <form action="#" onsubmit="return false">
+          <label for="number">Enter a Number:</label>
+          <input type="text" id="number" name="number" required>
+          <button type="submit" id="calculate">Calculate</button>
+        </form>
+      </div>
+      <div id="results">
+        <div id="quote">
+            <p id="quote-text">"The best way to predict your future is to create it." - Abraham Lincoln</p>
+        </div>
+        <p><button onclick="saveScreenshot()" id="screenshot-btn">Take Screenshot</button></p>
+      </div>
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>&copy; 2023 NumberPropertySite. All Rights Reserved.</p>
+          </div>
+          <div class="col">
+            <nav>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+    <script src="quotes.js"></script>
+    <script type="module" src="index.js?ver=0.1"></script> 
+    
+  </body>
+</html>

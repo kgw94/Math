@@ -1,0 +1,154 @@
+:root{
+    --background:#10131f;
+    --spaceCadet:#2D3142;
+    --blackCoral:#4F5D75;
+    --silver:#BFC0C0;
+    --white:#ffffff;
+    --mandrian:#EF8354;
+    --antiqueWhite:#FFEEDB;
+    --beige:#EBEBD3;
+    --jet:#302B27;
+  
+    /** greenish **/
+    --mossGreen:#8A9B68;
+    --laurelGreen:#B6C197;
+    --paleGreenBud:#D5DDBC;
+  
+}
+
+body {
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  #pageHeader {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #form {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #results {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  #footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #footer nav {
+    margin-top: 10px;
+  }
+  
+  #footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #footer li {
+    margin: 0 10px;
+  }
+  
+  #footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+  }
+  
+  th {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #333;
+  }
+  
+  tr:hover {
+    background-color: #444;
+  }
+  
+  .number{
+    color:var(--mandrian);
+    font-weight:bold;
+  }
+  
+  #number {
+
+    width: 200px;
+    height: 30px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 12px;
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+  #screenshot-btn{
+    text-align:center;
+  }
+  #calculate ,#screenshot-btn{
+    width: 120px;
+    height: 36px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #4b5563;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+ 
+
+  #calculate:hover,#screenshot-btn:hover {
+    background-color: #3e8e41; /* Darker green */
+  }
+  
+  @media screen and (max-height: 600px) {
+    #container {
+      height: 100%;
+    }
+    #results {
+      flex-grow: 0;
+    }
+    #footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+  
