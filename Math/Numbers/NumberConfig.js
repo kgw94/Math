@@ -25,11 +25,12 @@ import { IcositetragonalGenerator } from "./IcositetragonalGenerator.js";
 import { AbundantNumber } from "./AbundantNumber.js";
 import { RectangularGenerator } from "./RectangularGenerator.js";
 import { FibonacciGenerator } from "./FibonacciGenerator.js";
-
+import { CompositeGenerator } from "./CompositeGenerator.js";
 const classMap = new Map();
 
 classMap.set("prime", num => new PrimeGenerator(num));
 classMap.set("square", num => new SquareGenerator(num));
+classMap.set("composite" , num => new CompositeGenerator(num));
 classMap.set("rectangular", num => new RectangularGenerator(num));
 classMap.set("triangular", num => new TriangularGenerator(num));
 classMap.set("pentagonal", num => new PentagonalGenerator(num));
